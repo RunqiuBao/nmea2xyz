@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.22"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nmea2xyz"
+version = "0.1.0"
+description = "Convert NMEA (GPS) to Cartesian coordinates."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name="Runiku Boa", email="bao@robot.t.u-tokyo.ac.jp"}
+]
+license = { text = "MIT" }
+keywords = ["nmea", "gps", "geodesy", "ecef", "enu", "python"]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5", "pre-commit>=3.7"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[project.scripts]
+nmea2xyz = "nmea2xyz:__main__.main"
