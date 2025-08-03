@@ -82,7 +82,7 @@ def convert_nmea_to_xyz(
         plt.show()
 
     # output to tum format gt
-    with open(os.path.join(os.path.dirame(nmea_file_path), os.path.basename(nmea_file_path).split('.')[0] + "_tumformat.txt"), 'w') as file:
+    with open(os.path.join(os.path.dirname(nmea_file_path), os.path.basename(nmea_file_path).split('.')[0] + "_tumformat.txt"), 'w') as file:
         for ipoint in range(aligned_traj.shape[0]):
             line = str(ipoint) + " " + str(aligned_traj[ipoint, 0]) + str(aligned_traj[ipoint, 1]) + " " + str(aligned_traj[ipoint, 2]) + " 0 0 0 1\n"
             file.write(line)
