@@ -1,6 +1,6 @@
 # nmea2xyz
 
-Utilities to parse NMEA and convert to Cartesian coordinates (ECEF).
+Utilities to parse NMEA and convert to Cartesian coordinates (ECEF->center->alignZ).
 
 ## Install
 ```bash
